@@ -187,9 +187,9 @@ class TwitterAPIExchange
      */
     public function buildOauth($url, $requestMethod)
     {
-        if (!in_array(strtolower($requestMethod), array('post', 'get')))
+        if (!in_array(strtolower($requestMethod), array('post', 'get', 'delete', 'put')))
         {
-            throw new Exception('Request method must be either POST or GET');
+            throw new Exception('Request method must be one of POST, GET, DELETE or PUT');
         }
         
         $consumer_key              = $this->consumer_key;

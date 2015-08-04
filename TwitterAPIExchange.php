@@ -294,6 +294,11 @@ class TwitterAPIExchange
             }
         }
 
+        if ($this->requestMethod == 'DELETE' || $this->requestMethod == 'PUT')
+        {
+            $options[CURLOPT_CUSTOMREQUEST] = $this->requestMethod;
+        }
+
         $feed = curl_init();
         curl_setopt_array($feed, $options);
         $json = curl_exec($feed);

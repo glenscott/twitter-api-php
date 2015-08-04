@@ -110,7 +110,7 @@ $url = 'https://ads-api.twitter.com/0/accounts/abc1/cards/app_download/9z8';
 $requestMethod = 'DELETE';
 $twitter = new TwitterAPIExchange($settings);
 echo $twitter->buildOauth($url, $requestMethod)
-    ->performRequest(true, array(CURLOPT_CUSTOMREQUEST => $requestMethod));
+    ->performRequest();
 ```
 
 That is it! Really simple, works great with the 1.1 API. Thanks to @lackovic10 and @rivers on SO!
